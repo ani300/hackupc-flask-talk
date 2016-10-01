@@ -1,8 +1,9 @@
 from flask import Flask, render_template
+import json, urllib
 app = Flask(__name__)
 
-def hackupc(visitor):
-  return render_template('hackupc.html')
+def index():
+  return render_template('index.html')
 
 if __name__ == "__main__":
   app.run()

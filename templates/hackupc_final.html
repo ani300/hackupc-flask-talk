@@ -8,18 +8,45 @@
   <title>HackUPC Fall 2016 - Flask intro talk</title>
 
   <!-- Bootstrap -->
-  <link href="static/css/bootstrap.min.css" rel="stylesheet">
+  <link href="/static/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
   <div class="container" style="text-align: center;">
+    <!-- Static navbar -->
+    <nav class="navbar navbar-default">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="/">Flask talk</a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+            <li><a href="/">Home</a></li>
+            <li class="active"><a href="#">HackUPC</a></li>
+            <li><a href="/epic">EPIC</a></li>
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div><!--/.container-fluid -->
+    </nav>
     <h1>HackUPC Fall 2016</h1>
-    <p class="lead">This is just a boilerplate HTML file to demonstrate everything works!</p>
-    <p class="lead">Hello {{ visitor }}!</p>
+    <p class="lead">
+    {% if visitor %}
+        Welcome to the second endpoint of the talk, {{ visitor }}!
+    {% else %}
+        Your name is missing :(
+    {% endif %}
+    </p>
+    
   </div>
 
   <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
   <!-- Include all compiled plugins (below), or include individual files as needed -->
-  <script src="static/js/bootstrap.min.js"></script>
+  <script src="/static/js/bootstrap.min.js"></script>
 </body>
 </html>

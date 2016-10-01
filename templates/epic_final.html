@@ -27,13 +27,22 @@
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
             <li><a href="/">Home</a></li>
-            <li class="active"><a href="#">HackUPC</a></li>
-            <li><a href="/epic">EPIC</a></li>
+            <li><a href="/hackupc">HackUPC</a></li>
+            <li class="active"><a href="#">EPIC</a></li>
           </ul>
         </div><!--/.nav-collapse -->
       </div><!--/.container-fluid -->
     </nav>
     <h1>HackUPC Fall 2016</h1>
+    {% for image in images %}
+    <div class="row">
+      <div class="col-md-12">
+      <img src="http://epic.gsfc.nasa.gov/epic-archive/natural/jpg/{{ image.image }}.jpg" />
+      <p></p>
+      </div>
+    </div>
+    {% endfor %}
+    <p>© NASA EPIC Team</p>
     
   </div>
 
